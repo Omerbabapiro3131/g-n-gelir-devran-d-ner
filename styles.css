@@ -1,0 +1,161 @@
+:root {
+  color-scheme: light dark;
+  --bg: #0f172a;
+  --bg-soft: #1e293b;
+  --card: #111827;
+  --text: #e5e7eb;
+  --accent: #34d399;
+  --accent-dark: #059669;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: linear-gradient(180deg, var(--bg), #020617);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.hero,
+main {
+  width: min(980px, 92vw);
+  margin: 0 auto;
+}
+
+.hero {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 2rem 0 1rem;
+}
+
+.logo-wrap {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 1rem;
+  padding: 0.5rem;
+}
+
+.capy-logo {
+  width: 180px;
+  height: auto;
+}
+
+.capy-body,
+.capy-head,
+.capy-ear,
+.capy-leg {
+  fill: #a16207;
+}
+
+.capy-eye,
+.capy-nose {
+  fill: #111827;
+}
+
+.grass,
+.grass-bite {
+  stroke: #22c55e;
+  stroke-width: 3;
+  fill: none;
+  stroke-linecap: round;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(52, 211, 153, 0.25);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+label,
+small {
+  display: block;
+}
+
+input,
+textarea,
+button {
+  width: 100%;
+  border-radius: 0.6rem;
+  border: 1px solid #334155;
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+  font: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  background: var(--accent);
+  color: #052e16;
+  cursor: pointer;
+  border: none;
+  font-weight: 600;
+}
+
+button:hover {
+  background: var(--accent-dark);
+  color: white;
+}
+
+.chat {
+  margin: 1rem 0 2rem;
+}
+
+.chat-log {
+  min-height: 220px;
+  max-height: 45vh;
+  overflow: auto;
+  display: grid;
+  gap: 0.7rem;
+  margin-bottom: 1rem;
+}
+
+.msg {
+  padding: 0.7rem;
+  border-radius: 0.7rem;
+  white-space: pre-wrap;
+}
+
+.msg.user {
+  background: rgba(52, 211, 153, 0.2);
+  border-left: 4px solid var(--accent);
+}
+
+.msg.ai {
+  background: rgba(148, 163, 184, 0.2);
+  border-left: 4px solid #93c5fd;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  place-items: center;
+  background: rgba(15, 23, 42, 0.65);
+  z-index: 30;
+}
+
+.modal.show {
+  display: grid;
+}
+
+.modal-box {
+  width: min(460px, 90vw);
+  background: #0f172a;
+  border: 1px solid rgba(52, 211, 153, 0.3);
+  border-radius: 1rem;
+  padding: 1rem;
+}
