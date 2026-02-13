@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CapyAI</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="logo-wrap" aria-label="CapyAI logo">
+        <svg class="capy-logo" viewBox="0 0 220 140" role="img" aria-labelledby="logoTitle logoDesc">
+          <title id="logoTitle">Çimen yiyen capybara</title>
+          <desc id="logoDesc">Capybara ve çimen çizimi</desc>
+          <ellipse cx="110" cy="90" rx="82" ry="34" class="capy-body" />
+          <circle cx="52" cy="72" r="24" class="capy-head" />
+          <circle cx="45" cy="66" r="3" class="capy-eye" />
+          <ellipse cx="33" cy="80" rx="6" ry="4" class="capy-nose" />
+          <circle cx="60" cy="48" r="8" class="capy-ear" />
+          <circle cx="48" cy="50" r="8" class="capy-ear" />
+          <rect x="130" y="108" width="14" height="20" rx="5" class="capy-leg" />
+          <rect x="88" y="108" width="14" height="20" rx="5" class="capy-leg" />
+          <path d="M143 69 C160 55, 175 52, 192 59" class="grass-bite" />
+          <path d="M190 60 L193 45 M186 62 L184 45 M198 62 L202 48" class="grass" />
+        </svg>
+      </div>
+      <div>
+        <h1 data-i18n="title">CapyAI</h1>
+        <p data-i18n="subtitle">
+          Kod yazma ve sohbet odaklı, Gemini 2.5 Flash destekli asistan.
+        </p>
+      </div>
+    </header>
+
+    <main>
+      <section class="info-grid">
+        <article class="card">
+          <h2 data-i18n="ipTitle">IP Bilgisi</h2>
+          <p><strong data-i18n="yourIp">IP Adresiniz:</strong> <span id="userIp">-</span></p>
+          <p><strong data-i18n="country">Ülke:</strong> <span id="userCountry">-</span></p>
+          <p><strong data-i18n="siteLanguage">Site Dili:</strong> <span id="siteLanguage">-</span></p>
+        </article>
+
+        <article class="card">
+          <h2 data-i18n="apiTitle">Gemini Ayarları</h2>
+          <label for="apiKey" data-i18n="apiLabel">Gemini API Key</label>
+          <input id="apiKey" type="password" autocomplete="off" />
+          <small data-i18n="apiHint">Anahtar localStorage'da saklanır.</small>
+        </article>
+      </section>
+
+      <section class="chat card">
+        <h2 data-i18n="chatTitle">CapyAI Sohbet</h2>
+        <div id="chatLog" class="chat-log" aria-live="polite"></div>
+        <form id="chatForm" class="chat-form">
+          <textarea
+            id="promptInput"
+            rows="4"
+            required
+            data-i18n-placeholder="promptPlaceholder"
+            placeholder="Sorunu yaz..."
+          ></textarea>
+          <button type="submit" id="sendBtn" data-i18n="send">Gönder</button>
+        </form>
+      </section>
+    </main>
+
+    <div class="modal" id="ipModal" aria-hidden="true">
+      <div class="modal-box">
+        <h3 data-i18n="ipModalTitle">Hoş geldin!</h3>
+        <p id="ipModalText"></p>
+        <button id="ipModalClose" data-i18n="close">Kapat</button>
+      </div>
+    </div>
+
+    <div class="modal" id="sloganModal" aria-hidden="true">
+      <div class="modal-box">
+        <p>GÜN GELIR DEVRAN DÖNER CAPYAI YERINE GERI DÖNER</p>
+        <button id="sloganModalClose" data-i18n="close">Kapat</button>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
